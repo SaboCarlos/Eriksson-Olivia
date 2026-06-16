@@ -516,66 +516,64 @@
         }
 
         /* ── COUNTDOWN ── */
-        #countdown {
-            background: var(--bg);
-        }
-
         .cd-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 56rem;
-            margin: 3rem auto 0;
-        }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 56rem;
+    margin: 3rem auto 0;
+}
 
-        @media(min-width:640px) {
-            .cd-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-            }
-        }
+.cd-cell {
+    position: relative;
+    border: 1px solid var(--border);
+    background: rgba(253, 250, 242, .6);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 8px 30px -12px rgba(95, 111, 79, .25);
+}
 
-        .cd-cell {
-            position: relative;
-            border: 1px solid var(--border);
-            background: rgba(253, 250, 242, .6);
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 8px 30px -12px rgba(95, 111, 79, .25);
-        }
+.cd-num {
+    font-family: var(--ff-display);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    color: var(--primary);
+    line-height: 1;
+}
 
-        .cd-cell::before,
-        .cd-cell::after {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            right: 1rem;
-            height: 1px;
-            background: rgba(201, 168, 106, .4);
-        }
+.cd-label {
+    margin-top: .75rem;
+    font-size: .6rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
 
-        .cd-cell::before {
-            top: 8px;
-        }
+/* Mobile */
+@media (max-width: 640px) {
 
-        .cd-cell::after {
-            bottom: 8px;
-        }
+    .cd-grid {
+        gap: .4rem;
+    }
 
-        .cd-num {
-            font-family: var(--ff-display);
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
-            color: var(--primary);
-            line-height: 1;
-        }
+    .cd-cell {
+        padding: 1rem .25rem;
+    }
 
-        .cd-label {
-            margin-top: .75rem;
-            font-size: .6rem;
-            letter-spacing: .35em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
+    .cd-num {
+        font-size: 1.8rem;
+    }
+
+    .cd-label {
+        font-size: .45rem;
+        letter-spacing: .15em;
+    }
+
+    .cd-cell::before,
+    .cd-cell::after {
+        left: .4rem;
+        right: .4rem;
+    }
+}
 
         /* ── GALLERY GRID ── */
         .gallery-grid {

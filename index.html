@@ -65,7 +65,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to bottom, #2d3326, #1d2118, #0e110b);
+            background: linear-gradient(to bottom, #1a3320, #0f2218, #081510);
             padding: 1.5rem;
             transition: opacity .5s ease 1.2s;
         }
@@ -115,7 +115,7 @@
         .env-body {
             position: absolute;
             inset: 0;
-            background: #f4f1e8;
+            background: #e8f0e4;
             border-radius: 2px;
             box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .6);
             overflow: hidden;
@@ -183,7 +183,7 @@
         .env-flap {
             position: absolute;
             inset: 0;
-            background: #e9e3d3;
+            background: #c8dcc0;
             clip-path: polygon(0 0, 100% 0, 50% 65%);
             transform-origin: top;
             transition: transform .9s cubic-bezier(.5, 0, .5, 1);
@@ -204,7 +204,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: #ece5d2;
+            background: #b8d0b0;
             clip-path: polygon(0 100%, 100% 100%, 100% 35%, 50% 75%, 0 35%);
         }
 
@@ -733,69 +733,48 @@
             color: var(--gold);
         }
 
-        /* ── PARENTS ── */
+        /* ── PARENTS (new style) ── */
         #parents {
             background: rgba(95, 111, 79, .05);
         }
 
-        .parents-grid {
-            display: grid;
+        .parents-names-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 2rem;
-            max-width: 56rem;
-            margin: 3.5rem auto 0;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        @media(min-width:768px) {
-            .parents-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .parent-card {
-            position: relative;
-            border: 1px solid var(--border);
-            background: var(--card);
-            padding: 2.5rem 2rem;
-            text-align: center;
-        }
-
-        .parent-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4rem;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .parent-title {
-            font-size: .6rem;
-            letter-spacing: .4em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .parent-list {
-            margin-top: 1.5rem;
+        .parents-col {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            align-items: center;
+            gap: .5rem;
         }
 
-        .parent-name {
-            font-family: var(--ff-display);
-            font-size: 1.25rem;
-            color: var(--primary);
+        .parents-script-name {
+            font-family: var(--ff-script);
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: #b07840;
+            line-height: 1.3;
         }
 
-        .parent-memory {
-            font-size: .7rem;
-            font-style: italic;
-            letter-spacing: .05em;
-            color: rgba(201, 168, 106, .8);
-            margin-top: .25rem;
+        .parents-ornament-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            color: var(--gold);
+        }
+
+        .parents-line {
+            display: block;
+            width: 1px;
+            height: 2rem;
+            background: var(--gold);
+            opacity: .5;
         }
 
         /* ── VENUE ── */
@@ -1625,9 +1604,7 @@
         <section style="background:rgba(95,111,79,.05)">
             <div class="section-inner reveal">
                 <h2 class="section-title-script">Lei Divina</h2>
-                <p class="verse-text">"O amor é paciente, o amor é bondoso; não inveja, não se vangloria, não se
-                    orgulha. Tudo sofre, tudo crê, tudo espera, tudo suporta."</p>
-                <p class="verse-ref">1 Coríntios 13:4-7</p>
+                <p class="verse-text">"Juntos, com amor, uniremos nossas vidas. E celebramos o início do nosso para sempre, com a bênção de Deus."</p>
                 <div class="ornament">
                     <span></span>
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1642,33 +1619,21 @@
         <!-- PARENTS -->
         <section id="parents">
             <div class="section-inner reveal">
-                <span class="gold-divider">Com amor e gratidão</span>
-                <h2 class="section-title">Aos nossos pais</h2>
-            </div>
-            <div class="parents-grid reveal">
-                <div class="parent-card">
-                    <p class="parent-title">Família do Noivo</p>
-                    <div class="parent-list">
-                        <div>
-                            <p class="parent-name">Inácio Meneses Duarte</p>
-                            <p class="parent-memory">(em Memória)</p>
-                        </div>
-                        <div>
-                            <p class="parent-name">Maria José Rodrigues Gonçalves</p>
-                        </div>
+                <div class="parents-names-wrap">
+                    <div class="parents-col">
+                        <p class="parents-script-name">Rafael Maia</p>
+                        <p class="parents-script-name">Gina Chundo</p>
                     </div>
-                </div>
-                <div class="parent-card">
-                    <p class="parent-title">Família da Noiva</p>
-                    <div class="parent-list">
-                        <div>
-                            <p class="parent-name">Marcelino Armando Adão Lauchande</p>
-                            <p class="parent-memory">(em Memória)</p>
-                        </div>
-                        <div>
-                            <p class="parent-name">Saidina Pinho Jaime Lauchande</p>
-                            <p class="parent-memory">(em Memória)</p>
-                        </div>
+                    <div class="parents-ornament-center">
+                        <span class="parents-line"></span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;color:var(--gold)">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                        <span class="parents-line"></span>
+                    </div>
+                    <div class="parents-col">
+                        <p class="parents-script-name">Pedro Bié</p>
+                        <p class="parents-script-name">Victorina Sinai</p>
                     </div>
                 </div>
             </div>
@@ -1717,8 +1682,7 @@
             <div class="rsvp-inner reveal">
                 <span class="gold-divider">RSVP</span>
                 <h2 class="rsvp-title">Confirmação de Presença</h2>
-                <p class="rsvp-desc">A sua presença tornará este dia ainda mais especial. Escreva o seu nome completo e
-                    clique em confirmar.</p>
+                <p class="rsvp-desc">Convite válido para 2 pessoas.<br>Confirmação de presença até 30 de Julho.</p>
                 <div class="rsvp-form">
                     <input type="text" id="rsvp-name" class="rsvp-input" placeholder="Seu nome completo"
                         oninput="updateRsvpBtn()" />
